@@ -23,7 +23,7 @@ My own squares do not receive an initial_potential.  When the border to my squar
 
 Squares are assigned a move in descending order of strength.  `destinations` tracks the amount of strength already moved to a square, so remaining move assignments can minimize cap loss.
 
-Lines 44-45 resulted from my realization that squares moving together side-by-side or front-to-back were unusually susceptible to overkill.  So, I did not allow squares to do that.  This resulted in the (in)famous "checkerboard" pattern.
+Lines 44-45 resulted from my realization that squares moving together side-by-side or front-to-back were unusually susceptible to overkill.  So, I simply forbid any square from moving in the same direction that any neighbor had already commited to; they would STILL instead.  This resulted in the (in)famous "checkerboard" pattern.
 
 The argparse constants are particularly important:
 * `alpha` is the weighting used in the exponentially weighted average of potentials
@@ -67,9 +67,9 @@ However, soon enough, most of the top 10 bots had implemented a form of NAP, and
 
 I did not have the time nor tools really to deal with this in the final hours.  I hoped that I could participate in NAP until I've captured all available space, but I knew I'd be at a real disadvantage to the zit-poppers if the game were allowed to continue to the move cap.  My intention was to resume combat after I'd taken all available space, but in the short time remaining, I botched the implementation.  Specifically, line 120 is bugged and should be `seen_enemies.update(neighbor.owner for empty in hero_empties for neighbor in game_map.neighbors(empty)`; also, tuning the completely-out-of-thin-air magic number in line 97 could have helped raise my propensity to jail-break when available mining was depleted.  As a result of these bugs, my bot starts a fight through just a single square, which has no effect at all given the great strengths on either sides of the wall.
 
-Finally, in the last 30 minutes prior to the close of submissions, I debated whether to disable NAP entirely when down to final two players.  I decided yes, but determining the number of players remaining required another pass through the entire game_map, which after some frantic testing, threatened to timeout my bot on the largest maps, which wasn't worth the risk, so I abandoned the plan.  In that mild panic, I missed the easy opportunity to disable NAP for heads-up matches (starter bot code already counts number of starting players in the initialization period), which has quite likely cost me some heads-up matches in the finals.  I would take my bot against all comers in an old-fashioned Halite street fight!
+Finally, in the last 30 minutes prior to the close of submissions, I debated whether to disable NAP entirely when down to final two players.  I decided yes, but determining the number of players remaining required another pass through the entire game_map, which after some frantic testing, threatened to timeout my bot on the largest maps, which wasn't worth the risk, so I abandoned the plan.  In that mild panic, I missed the easy opportunity to disable NAP for heads-up matches (starter bot code already counts number of starting players in the initialization period), which has quite likely cost me some heads-up matches in the finals.  I would take my bot against all comers in an old-fashioned Halite street fight any day!
 
-The meta-meta game that developed in those last hours was really amazing, and I didn't see it coming.  Kudos to @timfoden and @mzotkiew that had the brilliance to develop and implement really great NAP strategies.  It isn't necessarily always pretty :), but it looks like a winner.  Congrats!
+The meta-meta game that developed in those last hours was really amazing, and I didn't see it coming.  Kudos to @timfoden and @mzotkiew that had the brilliance to develop and implement really great NAP strategies.  It isn't necessarily always pretty :wink:, but it looks like a winner.  Congrats!
 
 ## thank you's
 
