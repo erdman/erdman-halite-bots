@@ -69,7 +69,7 @@ I did not have the time nor tools really to deal with this in the final hours.  
 
 Finally, in the last 30 minutes prior to the close of submissions, I debated whether to disable NAP entirely when down to final two players.  I decided yes, but determining the number of players remaining required another pass through the entire game_map, which after some frantic testing, threatened to timeout my bot on the largest maps, which wasn't worth the risk, so I abandoned the plan.  In that mild panic, I missed the easy opportunity to disable NAP for heads-up matches (starter bot code already counts number of starting players in the initialization period), which has quite likely cost me some heads-up matches in the finals.  I would take my bot against all comers in an old-fashioned Halite street fight any day!
 
-The meta-meta game that developed in those last hours was really amazing, and I didn't see it coming.  Kudos to @timfoden and @mzotkiew that had the brilliance to develop and implement really great NAP strategies.  It isn't necessarily always pretty :wink:, but it looks like a winner.  Congrats!
+The meta-meta game that developed in those last hours was really amazing, and I didn't see it coming.  Kudos to @mzotkiew, @Shummie, @timfoden, @DexGroves (and anyone else I missed!) that had the brilliance to develop and implement really great NAP strategies.  It isn't necessarily always pretty :wink:, but it looks like a winner.  Congrats!
 
 ## thank you's
 
